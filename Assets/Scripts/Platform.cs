@@ -7,12 +7,13 @@ public class Platform : MonoBehaviour
 {
   public Rigidbody2D Rigidbody2D;
   public TextMeshProUGUI TextMeshProUGUI;
-
   public int Scores = 0;
+
   void Start()
   {
-    Rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+    TextMeshProUGUI = GameObject.Find("ScoresText").GetComponent<TextMeshProUGUI>();
     TextMeshProUGUI.text = Scores.ToString();
+    Rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
   }
 
   void FixedUpdate()
