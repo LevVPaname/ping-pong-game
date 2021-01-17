@@ -28,7 +28,7 @@ public class App : MonoBehaviour
 
 
   [Space]
-  private int ScoresToWin = 1;
+  public int ScoresToWin = 10;
   public UIScreen[] Screens;
 
   private GameObject _Game;
@@ -120,7 +120,10 @@ public class App : MonoBehaviour
 
   private void ChangeScores(int value)
   {
-    TotalScores += value;
+    if (value > 0)
+    {
+      TotalScores += value;
+    }
     _Scores += value;
     if (_Scores <= 0)
     {
